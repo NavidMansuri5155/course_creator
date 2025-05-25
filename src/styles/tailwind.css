@@ -1,0 +1,100 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Custom CSS Variables */
+:root {
+    /* Primary Colors */
+    --color-primary: #2563EB; /* blue-600 */
+    --color-primary-hover: #1D4ED8; /* blue-700 */
+    --color-primary-light: #DBEAFE; /* blue-100 */
+    
+    /* Neutral Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-surface: #F9FAFB; /* gray-50 */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #4B5563; /* gray-600 */
+    --color-text-tertiary: #9CA3AF; /* gray-400 */
+    
+    /* Semantic Colors */
+    --color-success: #16A34A; /* green-600 */
+    --color-success-light: #DCFCE7; /* green-100 */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-light: #FEF3C7; /* amber-100 */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-light: #FEE2E2; /* red-100 */
+    --color-info: #4F46E5; /* indigo-600 */
+    --color-info-light: #E0E7FF; /* indigo-100 */
+}
+
+/* Custom Animation Classes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.4s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Custom Component Classes */
+@layer components {
+    .focus-ring {
+        @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    }
+    
+    .card {
+        @apply bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden;
+    }
+    
+    .input-base {
+        @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm;
+    }
+}
